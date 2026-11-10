@@ -79,3 +79,23 @@ rates {0.001, 0.01, 0.1} × widths {16, 64}, and times the forward and backward 
    only ~2× the forward time.
 
 Shared in both labs: `common.py` (seeds, data, paths), `make_report.py` (builds the report), `run_all.py`.
+
+## Lab 3 — Architectures and their costs
+
+Dataset: Fashion-MNIST (`torchvision.datasets.FashionMNIST`, downloaded to `data/`).
+
+```bash
+python lab03/src/main.py
+```
+
+Trains an MLP, a CNN and a patch-based attention model for 5 epochs (Adam, lr 1e-3, batch 128), then compares
+parameters, MACs (thop), latency at batch 1 and 128, and test accuracy. Plot → `results/tradeoff_plots.png`;
+hand FLOP calculation → `results/hand_calculation.jpg`.
+
+**Key findings** (full analysis in [`lab03/report.md`](lab03/report.md)):
+the CNN is the most cost-effective (90.22% accuracy with ~20k parameters), the MLP is fastest but has ~10× more
+parameters (87.69%), and the attention model lags on accuracy (84.14%) without pre-training.
+
+## Labs 4–11 and project
+
+Folders `lab04/` … `lab11/` and `project/` follow the same layout and are filled in as the labs are completed.
