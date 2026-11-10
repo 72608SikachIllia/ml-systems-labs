@@ -1,0 +1,49 @@
+{
+  "source": "fetch_openml(name='adult', version=2, as_frame=True)  # OpenML 1590",
+  "rows": 48842,
+  "columns": 15,
+  "expected_rows": 48842,
+  "expected_columns": 15,
+  "shape_ok": true,
+  "column_names": [
+    "age",
+    "workclass",
+    "fnlwgt",
+    "education",
+    "education-num",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "capital-gain",
+    "capital-loss",
+    "hours-per-week",
+    "native-country",
+    "class"
+  ],
+  "dtypes": {
+    "age": "int64",
+    "workclass": "category",
+    "fnlwgt": "int64",
+    "education": "category",
+    "education-num": "int64",
+    "marital-status": "category",
+    "occupation": "category",
+    "relationship": "category",
+    "race": "category",
+    "sex": "category",
+    "capital-gain": "int64",
+    "capital-loss": "int64",
+    "hours-per-week": "int64",
+    "native-country": "category",
+    "class": "category"
+  },
+  "target_column": "class",
+  "label_counts": {
+    "<=50K": 37155,
+    ">50K": 11687
+  },
+  "raw_sha256": "02a7bbc4a27c04e1d48193362caf1e3cecb4b700c4c09fff7ffbd11a70db11a2",
+  "raw_unmodified": true
+}

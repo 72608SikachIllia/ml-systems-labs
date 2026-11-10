@@ -1,0 +1,3 @@
+features,derived,accuracy,f1 (>50K)
+14 original,False,0.854,0.6601
+14 original + capital_net + hours_per_age,True,0.8578,0.6696

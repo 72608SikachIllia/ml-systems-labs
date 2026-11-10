@@ -1,0 +1,49 @@
+check,column,violations,detail
+row_count,*,0,48842 rows (expected 48842)
+column_count,*,0,15 columns (expected 15)
+schema_columns,*,0,missing=[] extra=[]
+type,age,0,"expected int, got int64"
+missing ('?' or NaN),age,0,"NaN=0, '?'=0"
+range,age,0,allowed 17-90; observed 17-90
+type,workclass,0,"expected category, got category"
+missing ('?' or NaN),workclass,2799,"NaN=2799, '?'=0"
+allowed_categories,workclass,0,"8 distinct values, all in data dictionary"
+type,fnlwgt,0,"expected int, got int64"
+missing ('?' or NaN),fnlwgt,0,"NaN=0, '?'=0"
+type,education,0,"expected category, got category"
+missing ('?' or NaN),education,0,"NaN=0, '?'=0"
+allowed_categories,education,0,"16 distinct values, all in data dictionary"
+type,education-num,0,"expected int, got int64"
+missing ('?' or NaN),education-num,0,"NaN=0, '?'=0"
+type,marital-status,0,"expected category, got category"
+missing ('?' or NaN),marital-status,0,"NaN=0, '?'=0"
+allowed_categories,marital-status,0,"7 distinct values, all in data dictionary"
+type,occupation,0,"expected category, got category"
+missing ('?' or NaN),occupation,2809,"NaN=2809, '?'=0"
+allowed_categories,occupation,0,"14 distinct values, all in data dictionary"
+type,relationship,0,"expected category, got category"
+missing ('?' or NaN),relationship,0,"NaN=0, '?'=0"
+allowed_categories,relationship,0,"6 distinct values, all in data dictionary"
+type,race,0,"expected category, got category"
+missing ('?' or NaN),race,0,"NaN=0, '?'=0"
+allowed_categories,race,0,"5 distinct values, all in data dictionary"
+type,sex,0,"expected category, got category"
+missing ('?' or NaN),sex,0,"NaN=0, '?'=0"
+allowed_categories,sex,0,"2 distinct values, all in data dictionary"
+type,capital-gain,0,"expected int, got int64"
+missing ('?' or NaN),capital-gain,0,"NaN=0, '?'=0"
+range,capital-gain,0,allowed 0-99999; observed 0-99999
+type,capital-loss,0,"expected int, got int64"
+missing ('?' or NaN),capital-loss,0,"NaN=0, '?'=0"
+range,capital-loss,0,allowed 0-4356; observed 0-4356
+type,hours-per-week,0,"expected int, got int64"
+missing ('?' or NaN),hours-per-week,0,"NaN=0, '?'=0"
+range,hours-per-week,0,allowed 1-99; observed 1-99
+type,native-country,0,"expected category, got category"
+missing ('?' or NaN),native-country,857,"NaN=857, '?'=0"
+allowed_categories,native-country,0,"41 distinct values, all in data dictionary"
+type,income,0,"expected category, got category"
+missing ('?' or NaN),income,0,"NaN=0, '?'=0"
+allowed_categories,income,0,"2 distinct values, all in data dictionary"
+duplicate_rows (all columns),*,52,"reported, not dropped"
+duplicate_feature_rows,*,57,same 14 features (label may differ)

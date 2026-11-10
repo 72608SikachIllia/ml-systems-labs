@@ -1,0 +1,30 @@
+{
+  "train_rows_before_dedup": 34189,
+  "train_duplicates_dropped": 24,
+  "train_rows": 34165,
+  "test_rows": 14653,
+  "train_missing_before_impute": {
+    "workclass": 1923,
+    "occupation": 1933,
+    "native-country": 590
+  },
+  "test_missing_before_impute": {
+    "workclass": 873,
+    "occupation": 873,
+    "native-country": 267
+  },
+  "categorical_modes (train)": {
+    "workclass": "Private",
+    "education": "HS-grad",
+    "marital-status": "Married-civ-spouse",
+    "occupation": "Prof-specialty",
+    "relationship": "Husband",
+    "race": "White",
+    "sex": "Male",
+    "native-country": "United-States"
+  },
+  "train_values_clipped": 2357,
+  "processed_features": 107,
+  "train_positive_rate": 0.23936777403775794,
+  "test_positive_rate": 0.23926840919948134
+}

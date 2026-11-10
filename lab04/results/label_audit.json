@@ -1,0 +1,13 @@
+{
+  "rows_in_duplicate_feature_groups": 111,
+  "conflicting_groups": 5,
+  "rows_in_conflicting_groups": 10,
+  "conflict_rate_of_all_rows": 0.000205,
+  "sample_size": 50,
+  "sample_rows_with_impossible_values": 0,
+  "sample_rows_with_missing_('?')": 3,
+  "sample_label_counts": {
+    "<=50K": 40,
+    ">50K": 10
+  }
+}

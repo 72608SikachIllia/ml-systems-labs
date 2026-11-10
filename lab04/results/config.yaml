@@ -1,0 +1,52 @@
+dataset:
+  name: UCI Adult / Census Income
+  loader: fetch_openml(name='adult', version=2, as_frame=True)
+  openml_id: 1590
+  raw_rows: 48842
+  raw_columns: 15
+  raw_sha256: 02a7bbc4a27c04e1d48193362caf1e3cecb4b700c4c09fff7ffbd11a70db11a2
+seed: 42
+split:
+  test_size: 0.3
+  stratify: income
+  random_state: 42
+  done_before_cleaning: true
+cleaning:
+  null_policy: '''?'' and NaN are missing'
+  duplicates: exact duplicates dropped from train only
+  train_duplicates_dropped: 24
+  imputation:
+    numeric: median (fit on train)
+    categorical: most_frequent (fit on train)
+  outliers: clip numeric to p1/p99 of train
+  scaling: StandardScaler (fit on train)
+  encoding: OneHotEncoder(handle_unknown='ignore')
+features:
+  numeric:
+  - age
+  - fnlwgt
+  - education-num
+  - capital-gain
+  - capital-loss
+  - hours-per-week
+  categorical:
+  - workclass
+  - education
+  - marital-status
+  - occupation
+  - relationship
+  - race
+  - sex
+  - native-country
+  derived:
+  - capital_net
+  - hours_per_age
+  processed_feature_count: 107
+artifacts:
+  preprocessor: lab04/results/preprocessor.joblib
+  processed_train: data/processed/lab04/train.csv
+  processed_test: data/processed/lab04/test.csv
+processed_sha256:
+  train: d13dcaa68ab77881d6cb19fdb52f1fa28e71788413e87de5e225d457fffaafd3
+  test: 3a50748c14ff6a7722e313d67867e9bcbd89e0944fe4a5ae2301ac2c0a72ecd3
+python: 3.11.8

@@ -1,0 +1,9 @@
+feature,median (train),clip_low p1 (train),clip_high p99 (train)
+age,37.0,17.0,74.0
+fnlwgt,178272.0,27035.2,509629.0
+education-num,10.0,3.0,16.0
+capital-gain,0.0,0.0,15024.0
+capital-loss,0.0,0.0,1980.0
+hours-per-week,40.0,8.0,80.0
+capital_net,0.0,-1980.0,15024.0
+hours_per_age,2.0,0.20833333333333334,20.0

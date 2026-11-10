@@ -96,6 +96,28 @@ hand FLOP calculation → `results/hand_calculation.jpg`.
 the CNN is the most cost-effective (90.22% accuracy with ~20k parameters), the MLP is fastest but has ~10× more
 parameters (87.69%), and the attention model lags on accuracy (84.14%) without pre-training.
 
-## Labs 4–11 and project
+## Lab 4 — Data pipeline and quality
 
-Folders `lab04/` … `lab11/` and `project/` follow the same layout and are filled in as the labs are completed.
+Dataset: UCI Adult / Census Income (`fetch_openml(name='adult', version=2, as_frame=True)`, cached in `data/`).
+
+```bash
+python lab04/src/run_all.py
+```
+
+A leakage-free pipeline for mixed numeric and categorical data: raw ingestion, schema validation, split-first
+cleaning (median/mode imputation, 1st/99th-percentile clipping, scaling, one-hot) fit on train only,
+two derived features, a label-quality audit and a SHA256 fingerprint of the processed data.
+
+| Script | Step |
+|---|---|
+| `ingest.py` | Load raw data unchanged, log 48842 x 15 → `results/ingest_log.json` |
+| `validate.py` | Types, ranges, nulls (`'?'`), categories, duplicates → `results/validation_report.csv` |
+| `preprocess.py` | Split 70/30, dedup train, fit preprocessor → `results/preprocessor.joblib`, `results/cleaning_log.json` |
+| `features.py` | `capital_net`, `hours_per_age` with/without, LogisticRegression → `results/feature_eval.csv` |
+| `label_audit.py` | Duplicate-conflict audit + 50-row dictionary check → `results/label_audit.json`, `results/label_audit_sample.csv` |
+| `finalize.py` | SHA256 of processed data + pipeline config → `results/config.yaml` |
+| `make_report.py` | Builds `lab04/report.md` and `lab04/data_card.md` |
+
+## Labs 5–11 and project
+
+Folders `lab05/` … `lab11/` and `project/` are filled in as the labs are completed.

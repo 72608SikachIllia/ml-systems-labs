@@ -1,0 +1,8 @@
+{
+  "checks_run": 48,
+  "checks_with_violations": 5,
+  "rows_with_any_missing": 3620,
+  "missing_as_nan": 6465,
+  "missing_as_question_mark": 0,
+  "rows_dropped": 0
+}
